@@ -1,0 +1,31 @@
+(E1) -> [S1] -> (E1) : TLINK [INCLUDE] ::::: 3
+(E2) -> [S1] -> (E1) : TLINK [AFTER] ::::: 72
+(E2) -> [S1] -> (E1) : TLINK [BEFORE] ::::: 67
+(E2) -> [S1] -> (E1) : TLINK [END] ::::: 1
+(E2) -> [S1] -> (E1) : TLINK [INCLUDE] ::::: 574
+(E2) -> [S1] -> (E1) : TLINK [START] ::::: 3
+(E2) -> [S1] -> (E2) : TLINK [AFTER] ::::: 121
+(E2) -> [S1] -> (E2) : TLINK [BEFORE] ::::: 156
+(E2) -> [S1] -> (E2) : TLINK [INCLUDE] ::::: 417
+(E2) -> [S1] -> (E2) : TLINK [START] ::::: 7
+(E2) -> [S1] -> (S2) : TLINK [BEFORE] ::::: 1
+(E2) -> [S1] -> (S2) : TLINK [INCLUDE] ::::: 4
+(E2) -> [S1] -> (S2) : TLINK [START] ::::: 2
+(E2) -> [S1] -> (T1) : TLINK [..] ::::: 1
+(E2) -> [S1] -> (T1) : TLINK [AFTER] ::::: 88
+(E2) -> [S1] -> (T1) : TLINK [BEFORE] ::::: 97
+(E2) -> [S1] -> (T1) : TLINK [END] ::::: 198
+(E2) -> [S1] -> (T1) : TLINK [INCLUDE] ::::: 3713
+(E2) -> [S1] -> (T1) : TLINK [SIMULTANEOUS] ::::: 513
+(E2) -> [S1] -> (T1) : TLINK [START] ::::: 606
+abort (P) -> [S1] -> (T1) : TLINK [INCLUDE] ::::: 4
+abort (P) -> [S1] -> (T1) : TLINK [SIMULTANEOUS] ::::: 1
+(P) -> [S1] -> (T1) : TREL [INCLUDE] ::::: 253
+(P) -> [S1] -> (T1) : TREL [SIMULTANEOUS] ::::: 160
+(P) -> [S1] -> (T1) : TREL [START] ::::: 5
+
+
+(E1) -> [_] -> (T1) : TLINK [INCLUDE] ::::: 45
+(E2) -> [_] -> (E1) : TLINK [INCLUDE] ::::: 136
+(E2) -> [_] -> (T1) : TLINK [INCLUDE] ::::: 538
+(P) -> [_] -> (T1) : TREL [INCLUDE] ::::: 24

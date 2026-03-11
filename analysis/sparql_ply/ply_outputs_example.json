@@ -1,0 +1,2822 @@
+{
+  "SELECT ?ans {\n\twd:Q100707776 p:P1697 ?statement_2019sse.\n\t?statement_2019sse psv:P1697 ?value_st_2019sse.\n\t?value_st_2019sse wikibase:quantityAmount ?2019sse.\n\t\n\twd:Q102132407 p:P1697 ?statement_2020bre.\n\t?statement_2020bre psv:P1697 ?value_st_2020bre.\n\t?value_st_2020bre wikibase:quantityAmount ?2020bre.\n\t\n\tBIND( (?2019sse / ?2020bre) AS ?ans )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?ans"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q100707776"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1697"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_2019sse"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_2019sse"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1697"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_2019sse"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_2019sse"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2019sse"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q102132407"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1697"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_2020bre"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_2020bre"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1697"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_2020bre"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_2020bre"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2020bre"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2019sse"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2020bre"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?ans"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?diff {\n\twd:Q67914719 p:P2895 ?statement_Wipha_wind.\n\t?statement_Wipha_wind psv:P2895 ?value_st_Wipha_wind.\n\t?value_st_Wipha_wind wikibase:quantityAmount ?Wipha_wind.\n\t\n\twd:Q1014783 p:P2049 ?statement_atlantic_width.\n\t?statement_atlantic_width psv:P2049 ?value_st_atlantic_width.\n\t?value_st_atlantic_width wikibase:quantityAmount ?atlantic_width.\n\t\n\tBIND( (?atlantic_width / ?Wipha_wind) AS ?Wipha_time )\n\t\n\twd:Q56278495 p:P2895 ?statement_Kajiki_wind.\n\t?statement_Kajiki_wind psv:P2895 ?value_st_Kajiki_wind.\n\t?value_st_Kajiki_wind wikibase:quantityAmount ?Kajiki_wind.\n\t\n\tBIND( (?atlantic_width / ?Kajiki_wind) AS ?Kajiki_time )\n\t\n\tBIND( ((?Kajiki_time - ?Wipha_time)) AS ?diff )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?diff"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q67914719"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2895"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_Wipha_wind"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_Wipha_wind"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2895"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_Wipha_wind"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_Wipha_wind"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?Wipha_wind"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1014783"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2049"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_atlantic_width"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_atlantic_width"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2049"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_atlantic_width"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_atlantic_width"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?atlantic_width"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?atlantic_width"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?Wipha_wind"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?Wipha_time"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q56278495"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2895"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_Kajiki_wind"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_Kajiki_wind"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2895"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_Kajiki_wind"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_Kajiki_wind"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?Kajiki_wind"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?atlantic_width"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?Kajiki_wind"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?Kajiki_time"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.NOP",
+                  "operator": null,
+                  "children": [
+                    {
+                      "type": "Expression.BINARY_ARITHMETIC",
+                      "operator": "-",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?Kajiki_time"
+                        },
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?Wipha_time"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?diff"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?dif {\n\twd:Q1023292 p:P1132 ?statement_2014_goals.\n\t?statement_2014_goals psv:P1132 ?value_st_2014_goals.\n\t?value_st_2014_goals wikibase:quantityAmount ?2014_goals.\n\t\n\twd:Q1023292 p:P1351 ?statement_2014_participants.\n\t?statement_2014_participants psv:P1351 ?value_st_2014_participants.\n\t?value_st_2014_participants wikibase:quantityAmount ?2014_participants.\n\t\n\tBIND( (?2014_goals / ?2014_participants) AS ?2014_goals_per_country )\n\t\n\twd:Q1024029 p:P1132 ?statement_1994_goals.\n\t?statement_1994_goals psv:P1132 ?value_st_1994_goals.\n\t?value_st_1994_goals wikibase:quantityAmount ?1994_goals.\n\t\n\twd:Q1024029 p:P1351 ?statement_1994_participants.\n\t?statement_1994_participants psv:P1351 ?value_st_1994_participants.\n\t?value_st_1994_participants wikibase:quantityAmount ?1994_participants.\n\t\n\tBIND( (?1994_goals / ?1994_participants) AS ?1994_goals_per_country )\n\t\n\tBIND( ((?2014_goals_per_country - ?1994_goals_per_country)) AS ?dif )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?dif"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1023292"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1132"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_2014_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_2014_goals"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1132"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_2014_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_2014_goals"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2014_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1023292"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1351"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_2014_participants"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_2014_participants"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1351"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_2014_participants"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_2014_participants"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2014_participants"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2014_goals"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?2014_participants"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?2014_goals_per_country"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1024029"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1132"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_1994_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_1994_goals"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1132"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_1994_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_1994_goals"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?1994_goals"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1024029"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1351"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_1994_participants"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_1994_participants"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1351"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_1994_participants"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_1994_participants"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?1994_participants"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?1994_goals"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?1994_participants"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?1994_goals_per_country"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.NOP",
+                  "operator": null,
+                  "children": [
+                    {
+                      "type": "Expression.BINARY_ARITHMETIC",
+                      "operator": "-",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?2014_goals_per_country"
+                        },
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?1994_goals_per_country"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?dif"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?ans {\n\twd:Q673018 wdt:P488 ?andres_bonifacio.\n\t\n\t?andres_bonifacio wdt:P20 ?maragondon.\n\t\n\t?maragondon p:P2403 ?statement_china_population_2017.\n\t?statement_china_population_2017 psv:P2403 ?value_st_china_population_2017.\n\t?value_st_china_population_2017 wikibase:quantityAmount ?china_population_2017.\n\t?statement_china_population_2017 pq:P585 ?time_china_population_2017.\n\tFILTER(YEAR(?time_china_population_2017) = 2020).\n\t\n\t\n\twd:Q493065 p:P2403 ?statement_india_population_2017.\n\t?statement_india_population_2017 psv:P2403 ?value_st_india_population_2017.\n\t?value_st_india_population_2017 wikibase:quantityAmount ?india_population_2017.\n\t?statement_india_population_2017 pq:P585 ?time_india_population_2017.\n\tFILTER(YEAR(?time_india_population_2017) = 2020).\n\t\n\t\n\tBIND( ((?china_population_2017 - ?india_population_2017)) AS ?ans )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?ans"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q673018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P488"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?andres_bonifacio"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?andres_bonifacio"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P20"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?maragondon"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?maragondon"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2403"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_china_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_china_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2403"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_china_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_china_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?china_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_china_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_china_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_china_population_2017"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2020"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q493065"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2403"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_india_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_india_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2403"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_india_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_india_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?india_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_india_population_2017"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_india_population_2017"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_india_population_2017"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2020"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.NOP",
+                  "operator": null,
+                  "children": [
+                    {
+                      "type": "Expression.BINARY_ARITHMETIC",
+                      "operator": "-",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?china_population_2017"
+                        },
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?india_population_2017"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?ans"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?times {\n\twd:Q25047466 p:P4131 ?statement_annual_energy_output_hoover.\n\t?statement_annual_energy_output_hoover psv:P4131 ?value_st_annual_energy_output_hoover.\n\t?value_st_annual_energy_output_hoover wikibase:quantityAmount ?annual_energy_output_hoover.\n\t?statement_annual_energy_output_hoover pq:P585 ?time_annual_energy_output_hoover.\n\tFILTER(YEAR(?time_annual_energy_output_hoover) = 2008).\n\t\n\t\n\twd:Q1261916 p:P4131 ?statement_annual_energy_output_rance.\n\t?statement_annual_energy_output_rance psv:P4131 ?value_st_annual_energy_output_rance.\n\t?value_st_annual_energy_output_rance wikibase:quantityAmount ?annual_energy_output_rance.\n\t?statement_annual_energy_output_rance pq:P585 ?time_annual_energy_output_rance.\n\tFILTER(YEAR(?time_annual_energy_output_rance) = 2019).\n\t\n\t\n\tBIND( (?annual_energy_output_hoover / ?annual_energy_output_rance) AS ?times )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?times"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q25047466"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P4131"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_annual_energy_output_hoover"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_annual_energy_output_hoover"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P4131"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_annual_energy_output_hoover"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_annual_energy_output_hoover"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?annual_energy_output_hoover"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_annual_energy_output_hoover"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_annual_energy_output_hoover"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_annual_energy_output_hoover"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2008"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q1261916"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P4131"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_annual_energy_output_rance"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_annual_energy_output_rance"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P4131"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_annual_energy_output_rance"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_annual_energy_output_rance"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?annual_energy_output_rance"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_annual_energy_output_rance"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_annual_energy_output_rance"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_annual_energy_output_rance"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2019"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?annual_energy_output_hoover"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?annual_energy_output_rance"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?times"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT DISTINCT ?buildings {\n\tValues ?buildings {wd:Q100307841 wd:Q10413351 wd:Q104664947}\n\t?buildings p:P2048 ?statement_height.\n\t?statement_height psv:P2048 ?value_st_height.\n\t?value_st_height wikibase:quantityAmount ?height.\n\t\n\t?buildings p:P1101 ?statement_above_ground_floors.\n\t?statement_above_ground_floors psv:P1101 ?value_st_above_ground_floors.\n\t?value_st_above_ground_floors wikibase:quantityAmount ?above_ground_floors.\n\t\n\tBIND( (?height / ?above_ground_floors) AS ?height_per_floor )\n}\nORDER BY DESC(?height_per_floor)\nLIMIT 1\n": {
+    "type": "Query.SELECT",
+    "select_modifier": "DISTINCT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?buildings"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.INLINE_DATA",
+          "children": [
+            [
+              {
+                "type": "NodeTerm.VAR",
+                "value": "?buildings"
+              }
+            ],
+            [
+              {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q100307841"
+              }
+            ],
+            [
+              {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q10413351"
+              }
+            ],
+            [
+              {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q104664947"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?buildings"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2048"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_height"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_height"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2048"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_height"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_height"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?height"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?buildings"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1101"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_above_ground_floors"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_above_ground_floors"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1101"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_above_ground_floors"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_above_ground_floors"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?above_ground_floors"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?height"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?above_ground_floors"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?height_per_floor"
+            }
+          ]
+        }
+      ]
+    },
+    "order_by": [
+      [
+        "DESC",
+        {
+          "type": "Expression.NOP",
+          "operator": null,
+          "children": [
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?height_per_floor"
+            }
+          ]
+        }
+      ]
+    ],
+    "limit": {
+      "type": "NodeTerm.INTEGER",
+      "value": "1"
+    }
+  },
+  "SELECT ?times_need {\n\twd:Q100142688 p:P3157 ?statement_dis_for_marathon.\n\t?statement_dis_for_marathon psv:P3157 ?value_st_dis_for_marathon.\n\t?value_st_dis_for_marathon wikibase:quantityAmount ?dis_for_marathon.\n\t\n\t?kim_collins wdt:P106 wd:Q11513337.\n\t\n\t?kim_collins wdt:P19 wd:Q204989.\n\t\n\t?kim_collins p:P2415 ?statement_bolt_time_per_100.\n\t?statement_bolt_time_per_100 psv:P2415 ?value_st_bolt_time_per_100.\n\t?value_st_bolt_time_per_100 wikibase:quantityAmount ?bolt_time_per_100.\n\t?statement_bolt_time_per_100 pq:P2416 wd:Q334734.\n\t\n\tBIND( (100 / ?bolt_time_per_100) AS ?bolt_speed_100 )\n\t\n\tBIND( (?dis_for_marathon / ?bolt_speed_100) AS ?times_need )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?times_need"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q100142688"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P3157"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_dis_for_marathon"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_dis_for_marathon"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P3157"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_dis_for_marathon"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_dis_for_marathon"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?dis_for_marathon"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?kim_collins"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P106"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.PREFIXED_NAME",
+                      "value": "wd:Q11513337"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?kim_collins"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P19"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.PREFIXED_NAME",
+                      "value": "wd:Q204989"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?kim_collins"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P2415"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_bolt_time_per_100"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_bolt_time_per_100"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P2415"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_bolt_time_per_100"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_bolt_time_per_100"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?bolt_time_per_100"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_bolt_time_per_100"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P2416"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.PREFIXED_NAME",
+                      "value": "wd:Q334734"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "100"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?bolt_time_per_100"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?bolt_speed_100"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?dis_for_marathon"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?bolt_speed_100"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?times_need"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?answer {\n\twd:Q107094680 p:P4441 ?statement_hd.\n\t?statement_hd psv:P4441 ?value_st_hd.\n\t?value_st_hd wikibase:quantityAmount ?hd.\n\t\n\twd:Q11111547 p:P4441 ?statement_gps.\n\t?statement_gps psv:P4441 ?value_st_gps.\n\t?value_st_gps wikibase:quantityAmount ?gps.\n\t\n\tBIND( (?gps / 2) AS ?half )\n\t\n\tBIND( (IF(?hd > ?half, \"TRUE\", \"FALSE\")) AS ?answer )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?answer"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q107094680"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P4441"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_hd"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_hd"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P4441"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_hd"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_hd"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?hd"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q11111547"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P4441"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_gps"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_gps"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P4441"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_gps"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_gps"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?gps"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_ARITHMETIC",
+                  "operator": "/",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?gps"
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?half"
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.FUNC_FORM",
+                  "operator": "IF",
+                  "children": [
+                    {
+                      "type": "Expression.BINARY_COMPARISON",
+                      "operator": ">",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?hd"
+                        },
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?half"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.RDF_LITERAL",
+                      "value": "\"TRUE\""
+                    },
+                    {
+                      "type": "NodeTerm.RDF_LITERAL",
+                      "value": "\"FALSE\""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?answer"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT ?answer {\n\twd:Q17104245 p:P8340 ?statement_china_population_2015.\n\t?statement_china_population_2015 psv:P8340 ?value_st_china_population_2015.\n\t?value_st_china_population_2015 wikibase:quantityAmount ?china_population_2015.\n\t?statement_china_population_2015 pq:P585 ?time_china_population_2015.\n\tFILTER(YEAR(?time_china_population_2015) = 2016).\n\t\n\t\n\twd:Q4778915 p:P8340 ?statement_india_population_2015.\n\t?statement_india_population_2015 psv:P8340 ?value_st_india_population_2015.\n\t?value_st_india_population_2015 wikibase:quantityAmount ?india_population_2015.\n\t?statement_india_population_2015 pq:P585 ?time_india_population_2015.\n\tFILTER(YEAR(?time_india_population_2015) = 2016).\n\t\n\t\n\tBIND( (IF(?india_population_2015 * 1.1 > ?china_population_2015, \"TRUE\", \"FALSE\")) AS ?answer )\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      {
+        "type": "NodeTerm.VAR",
+        "value": "?answer"
+      }
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q17104245"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P8340"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_china_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_china_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P8340"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_china_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_china_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?china_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_china_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_china_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_china_population_2015"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2016"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q4778915"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P8340"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_india_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_india_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P8340"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_india_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_india_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?india_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_india_population_2015"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_india_population_2015"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_india_population_2015"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2016"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.BIND",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.FUNC_FORM",
+                  "operator": "IF",
+                  "children": [
+                    {
+                      "type": "Expression.BINARY_COMPARISON",
+                      "operator": ">",
+                      "children": [
+                        {
+                          "type": "Expression.BINARY_ARITHMETIC",
+                          "operator": "*",
+                          "children": [
+                            {
+                              "type": "NodeTerm.VAR",
+                              "value": "?india_population_2015"
+                            },
+                            {
+                              "type": "NodeTerm.DECIMAL",
+                              "value": "1.1"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?china_population_2015"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.RDF_LITERAL",
+                      "value": "\"TRUE\""
+                    },
+                    {
+                      "type": "NodeTerm.RDF_LITERAL",
+                      "value": "\"FALSE\""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "NodeTerm.VAR",
+              "value": "?answer"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SELECT (COUNT(DISTINCT ?shares_border_countries_population_2018)+1 AS ?ans) {\n\twd:Q3769 wdt:P47 ?shares_border_countries.\n\t\n\t?shares_border_countries p:P1082 ?statement_shares_border_countries_population_2018.\n\t?statement_shares_border_countries_population_2018 psv:P1082 ?value_st_shares_border_countries_population_2018.\n\t?value_st_shares_border_countries_population_2018 wikibase:quantityAmount ?shares_border_countries_population_2018.\n\t?statement_shares_border_countries_population_2018 pq:P585 ?time_shares_border_countries_population_2018.\n\tFILTER(YEAR(?time_shares_border_countries_population_2018) = 2018).\n\t\n\t\n\twd:Q15518544 wdt:P495 ?russia.\n\t\n\t?russia p:P1082 ?statement_russia_population_2018.\n\t?statement_russia_population_2018 psv:P1082 ?value_st_russia_population_2018.\n\t?value_st_russia_population_2018 wikibase:quantityAmount ?russia_population_2018.\n\t?statement_russia_population_2018 pq:P585 ?time_russia_population_2018.\n\tFILTER(YEAR(?time_russia_population_2018) = 2018).\n\t\n\t\n\tFILTER(?russia_population_2018 < ?shares_border_countries_population_2018).\n}\n": {
+    "type": "Query.SELECT",
+    "target": [
+      [
+        {
+          "type": "Expression.BINARY_ARITHMETIC",
+          "operator": "+",
+          "children": [
+            {
+              "type": "Expression.AGGREGATE",
+              "operator": "COUNT",
+              "children": [
+                {
+                  "type": "NodeTerm.VAR",
+                  "value": "?shares_border_countries_population_2018"
+                }
+              ],
+              "is_distinct": true
+            },
+            {
+              "type": "NodeTerm.INTEGER",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "type": "NodeTerm.VAR",
+          "value": "?ans"
+        }
+      ]
+    ],
+    "pattern": {
+      "type": "GraphPattern.GROUP",
+      "children": [
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q3769"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P47"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?shares_border_countries"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?shares_border_countries"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1082"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_shares_border_countries_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_shares_border_countries_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1082"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_shares_border_countries_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_shares_border_countries_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?shares_border_countries_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_shares_border_countries_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_shares_border_countries_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_shares_border_countries_population_2018"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2018"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.TRIPLES_BLOCK",
+          "children": [
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.PREFIXED_NAME",
+                "value": "wd:Q15518544"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wdt:P495"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?russia"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?russia"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "p:P1082"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?statement_russia_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_russia_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "psv:P1082"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?value_st_russia_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?value_st_russia_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "wikibase:quantityAmount"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?russia_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "TriplesPath.TRIPLES_PATH",
+              "subj": {
+                "type": "NodeTerm.VAR",
+                "value": "?statement_russia_population_2018"
+              },
+              "pred_obj_list": [
+                [
+                  {
+                    "type": "NodeTerm.PREFIXED_NAME",
+                    "value": "pq:P585"
+                  },
+                  [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?time_russia_population_2018"
+                    }
+                  ]
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "=",
+                  "children": [
+                    {
+                      "type": "Expression.FUNC_TIME",
+                      "operator": "YEAR",
+                      "children": [
+                        {
+                          "type": "NodeTerm.VAR",
+                          "value": "?time_russia_population_2018"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "NodeTerm.INTEGER",
+                      "value": "2018"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "GraphPattern.FILTER",
+          "children": [
+            {
+              "type": "Expression.NOP",
+              "operator": null,
+              "children": [
+                {
+                  "type": "Expression.BINARY_COMPARISON",
+                  "operator": "<",
+                  "children": [
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?russia_population_2018"
+                    },
+                    {
+                      "type": "NodeTerm.VAR",
+                      "value": "?shares_border_countries_population_2018"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

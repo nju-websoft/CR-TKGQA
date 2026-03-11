@@ -1,0 +1,26 @@
+name: wikidata
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - make
+  - redis # Redis is used to persist FastAPI's rate limit data, and cache LLM outputs. This installs redis-server
+  - pip:
+    - invoke # used for running multi-part commands. A more Python-friendly alternative to Make
+    - datasets
+    - jupyter
+    - evaluate
+    - PyExecJS
+    - rdflib
+    - scipy
+    - spacy
+    - tqdm
+    - pytest
+    - pytest-asyncio # pytest plugin that facilitates the testing of async functions
+    - chainlite==0.1.12
+    - python-redis-cache # To automatically cache outputs of a python function. Used for Wikidata
+    - mwapi
+    - pandas
+    - json_repair # helps fix LLM json outputs
