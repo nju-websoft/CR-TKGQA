@@ -24,6 +24,7 @@ Domain of CR-TKGQA:
 Extra domain of test:
 - **comp_level**: Compositional level of the question, one in [iid, compositional, zero-shot]
 - **answer_entity_labels**: labels and alians of gold answer entities, used for evaluation of DirectQA & RTQA
+- **linking_entity_label_map**: Map of linking entities, employing GPT-4o-mini to extract entity mentions from the question, retrieving the top-5 candidate entities via the Wikidata API (https://www.wikidata.org/w/api.php) for each mention, and then using GPT-4o-mini to select the most plausible entity for each mention
 
 ## For Analysis 
 Please turn to `analysis/sorted_dataset_analysis.py`. 
