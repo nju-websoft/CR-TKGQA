@@ -62,8 +62,8 @@ async def solve(tree, idx, retriever):
                 #print(node["facts"])
                 if len(node["sons"]) > 0:
                     node["child_answer"] = tree[node["idx"]-1]["answer"]
-                    node["answer"] = node["child_answer"]
-                    node["answer"] = node["LLM_answer"]
+                    node["answer"] = node["child_answer"]   # origin
+                    node["answer"] = node["LLM_answer"]     # add this makes the result better
                 else:
                     node["answer"] = await aggregate_answer1(node)
                 
